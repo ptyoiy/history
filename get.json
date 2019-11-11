@@ -1,0 +1,51 @@
+{
+    "status": "ok",
+    "code": "",
+    "message": "",
+    "returnStr": null,
+    "page": 0,
+    "rows": 100000,
+    "totCount": 2,
+    "totPages": 1,
+    "list": [
+        {
+            "boardSeq": 2,
+            "boardCategory": null,
+            "boardMenu": "notice",
+            "boardPSeq": 0,
+            "boardLevel": 0,
+            "boardSubject": "제목입니다.",
+            "boardContent": "내용입니다2",
+            "boardCnt": 0,
+            "boardWriter": null,
+            "boardEmail": null,
+            "boardDelYn": null,
+            "boardPrivacyYn": null,
+            "boardIp": null,
+            "registId": null,
+            "registDate": "20191004163003",
+            "modifyId": null,
+            "modifyDate": null
+        },
+        {
+            "boardSeq": 9,
+            "boardCategory": null,
+            "boardMenu": "notice",
+            "boardPSeq": 0,
+            "boardLevel": 0,
+            "boardSubject": "테스트입니다.",
+            "boardContent": "내용입니다.",
+            "boardCnt": 1,
+            "boardWriter": null,
+            "boardEmail": null,
+            "boardDelYn": null,
+            "boardPrivacyYn": null,
+            "boardIp": null,
+            "registId": null,
+            "registDate": "20190928213138",
+            "modifyId": null,
+            "modifyDate": null
+        }
+    ],
+    "data": null
+}
