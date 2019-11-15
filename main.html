@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>역사 연표</title>
+
+    <style type="text/css">
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background: #eee;
+        }
+
+        .graph {
+            margin-top: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            background-clip: padding-box;
+            background-color: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .graph-content {
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .graph-content img {
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .carousel-inner {
+            padding-bottom: 20px;
+        }
+
+        .carousel-inner h2 {
+            display: inline;
+        }
+
+        .carousel-inner p {
+            display: inline;
+            padding-left: 10px;
+        }
+
+        #custom_carousel .item {
+            color: #000;
+            background-color: #eee;
+            padding: 20px 0;
+        }
+
+        .controls img {
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        #custom_carousel .controls {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-top: 60px;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            background: #E0E0E0;
+        }
+
+        #custom_carousel .controls li {
+            border-left: 3px solid #616161;
+
+        }
+
+        #custom_carousel .controls li.active {
+            background-color: #eee;
+            border-left: 3px solid #FF474A;
+        }
+
+        #custom_carousel .controls a small {
+            overflow: hidden;
+            display: block;
+            font-size: 10px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <!-- web font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+    <script>
+        $(document).ready(function (ev) {
+            $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+                $('#custom_carousel .controls li.active').removeClass('active');
+                $('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Start Carousel -->
+                <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="row clearfix">
+                        <div class="col-md-2 col-sm-2 column">
+                            <div class="controls">
+                                <ul class="nav">
+                                    <li data-target="#custom_carousel" data-slide-to="0" class="active"><a
+                                            href="#">국가연표1</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="1"><a href="#">국가연표2</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="2"><a href="#">지구연대기</a></li>
+                                    <li><a href="board.html">공지사항</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="3"><a href="#">지도</a></li>
+                                    <li><a href="index.html">역사사건</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-10 col-sm-10 column">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>국가 연표1</h2>
+                                                <p>국가별 비교 연표</p>
+                                                <div class="graph">
+                                                    <div class="graph-content"> <img src="images/1.jpg" width="1000px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>국가 연표2</h2>
+                                                <p>국가별 비교 표</p>
+                                                <div class="graph">
+                                                    <div class="graph-content"> <img src="images/2.jpg" width="1400px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>지구 연대기</h2>
+                                                <p>지구의 역사</p>
+                                                <div class="graph">
+                                                    <div class="graph-content"> <img src="images/3.jpg"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>지도</h2>
+                                                <p>GDP와 인구</p>
+                                                <div class="graph">
+                                                    <div class="wrapper clearfix">
+                                                        <figure>
+                                                            <div id="world-map-gdp" style="width: 800px; height: 700px">
+                                                                <script>
+                                                                    $(function () {
+                                                                        $('#world-map-gdp').vectorMap({
+                                                                            map: 'world_mill',
+                                                                            series: {
+                                                                                regions: [{
+                                                                                    values: gdpData,
+                                                                                    scale: ['#C8EEFF', '#0071A4'],
+                                                                                    normalizeFunction: 'polynomial'
+                                                                                }]
+                                                                            },
+                                                                            onRegionTipShow: function (e, el, code) {
+                                                                                el.html(el.html() + "<br>" + ' (GDP - ' + gdpData[code] + ')' + "<br>");
+                                                                                el.html(el.html() + ' (인구 - ' + popData[code] + "만" + ')');
+                                                                            }
+                                                                        });
+                                                                    });
+
+                                                                </script>
+                                                                <script type="text/javascript" src="./GDP by country visualization_files/ga.js"></script>
+                                                                <script src="./GDP by country visualization_files/jquery-1.8.2.min.js"></script>
+                                                                <script src="./GDP by country visualization_files/css3-mediaqueries.js"></script>
+                                                                <script src="./GDP by country visualization_files/modernizr.js"></script>
+                                                                <script src="./GDP by country visualization_files/jquery-jvectormap-2.0.3.min.js"></script>
+                                                                <script src="./GDP by country visualization_files/tabs.js"></script>
+                                                                <script src="./GDP by country visualization_files/jquery-jvectormap-world-mill.js"></script>
+                                                                <script src="./GDP by country visualization_files/gdp-data.js"></script>
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/style.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/lessframework.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/skin.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-jvectormap-2.0.3.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/syntax.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jsdoc.css">
+                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-ui-1.8.22.custom.css">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Item -->
+                            </div>
+                            <!-- End Carousel Inner -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

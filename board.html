@@ -1,0 +1,59 @@
+<html>
+<!-- 목록 -->
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- web font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+    <script>
+       
+        $.ajax({
+            type: "GET",
+            url: "http://49.1.218.17/board/",
+            success: function (json) {
+                var list = json.list;
+                var listlen = list.length;
+                var subject = "";
+
+                for (var i = 0; i < listlen; i++) {
+                    subject += "<tr>" + "<td>" + list[i].boardSubject + "</td>" + "<td>" + list[i].boardContent + "</td>" + "</tr>";
+                }
+                $(".sub").append(subject);
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container post post-index">
+        <table class="table table-striped posts">
+            <thead>
+                <tr>
+                    <th class="subject">제목</th>
+                    <th class="content">내용</th>
+                </tr>
+            </thead>
+            <tbody class="sub">
+               
+            </tbody>
+        </table>
+    </div> <!-- container end -->
+</body>
+
+</html>

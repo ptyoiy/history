@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8" />
+  <title>GDP by country visualization</title>
+
+  <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/style.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/lessframework.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/skin.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-jvectormap-2.0.3.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/syntax.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jsdoc.css">
+  <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-ui-1.8.22.custom.css">
+
+  <script type="text/javascript" async="" src="./GDP by country visualization_files/ga.js"></script>
+  <script src="./GDP by country visualization_files/jquery-1.8.2.min.js"></script>
+  <script src="./GDP by country visualization_files/css3-mediaqueries.js"></script>
+  <script src="./GDP by country visualization_files/modernizr.js"></script>
+  <script src="./GDP by country visualization_files/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="./GDP by country visualization_files/tabs.js"></script>
+
+
+  <script src="./GDP by country visualization_files/jquery-jvectormap-world-mill.js"></script>
+
+  <script src="./GDP by country visualization_files/gdp-data.js"></script>
+
+</head>
+
+<div id="main">
+  <div class="wrapper clearfix">
+
+    <div class="masthead clearfix">
+      <h1>GDP by country visualization</h1>
+
+    </div>
+
+
+    <div id="posts-list" class="clearfix">
+      <article class="format-standard">
+        <figure>
+          <div id="world-map-gdp" style="width: 800px; height: 600px">
+            <script>
+              //@code_start
+              $(function () {
+                $('#world-map-gdp').vectorMap({
+                  map: 'world_mill',
+                  series: {
+                    regions: [{
+                      values: gdpData,
+                      scale: ['#C8EEFF', '#0071A4'],
+                      normalizeFunction: 'polynomial'
+                    }]
+                  },
+                  onRegionTipShow: function (e, el, code) {
+                    el.html(el.html() + "<br>" + ' (GDP - ' + gdpData[code] + ')' + "<br>");
+                    el.html(el.html() + ' (인구 - ' + popData[code] + "만" + ')');
+                  }
+                });
+              });
+      //@code_end
+            </script>
+        </figure>
+
+      </article>
+    </div>
+
+
+  </div>
+</div>
+
+</body>
+
+</html>
