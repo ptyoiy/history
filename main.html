@@ -101,7 +101,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-
+    <script src="./GDP by country visualization_files/jquery.livequery.min.js"></script>
 
     <!-- web font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
@@ -120,20 +120,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-
                 <!-- Start Carousel -->
                 <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="row clearfix">
-                        <div class="col-md-2 col-sm-2 column">
+                        <div class="col-md-2 col-sm-6 column">
                             <div class="controls">
                                 <ul class="nav">
-                                    <li data-target="#custom_carousel" data-slide-to="0" class="active"><a
-                                            href="#">국가연표1</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#">국가연표1</a></li>
                                     <li data-target="#custom_carousel" data-slide-to="1"><a href="#">국가연표2</a></li>
                                     <li data-target="#custom_carousel" data-slide-to="2"><a href="#">지구연대기</a></li>
-                                    <li><a href="board.html">공지사항</a></li>
                                     <li data-target="#custom_carousel" data-slide-to="3"><a href="#">지도</a></li>
-                                    <li><a href="index.html">역사사건</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="4"><a href="#">공지사항</a></li>
+                                    <li data-target="#custom_carousel" data-slide-to="5"><a href="#">역사사건</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -184,50 +182,43 @@
                                 </div>
                                 <div class="item">
                                     <div class="container-fluid">
+                                        <div class="col-md-12">
+                                            <h2>지도</h2>
+                                            <p>GDP와 인구</p>
+                                            <div class="graph">
+                                                <div class="graph-content">
+                                                    <div class="wrapper clearfix">
+                                                        <iframe src="GDP by country visualization.html" width="1050" height="680"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h2>지도</h2>
-                                                <p>GDP와 인구</p>
+                                                <h2>공지사항</h2>
                                                 <div class="graph">
-                                                    <div class="wrapper clearfix">
-                                                        <figure>
-                                                            <div id="world-map-gdp" style="width: 800px; height: 700px">
-                                                                <script>
-                                                                    $(function () {
-                                                                        $('#world-map-gdp').vectorMap({
-                                                                            map: 'world_mill',
-                                                                            series: {
-                                                                                regions: [{
-                                                                                    values: gdpData,
-                                                                                    scale: ['#C8EEFF', '#0071A4'],
-                                                                                    normalizeFunction: 'polynomial'
-                                                                                }]
-                                                                            },
-                                                                            onRegionTipShow: function (e, el, code) {
-                                                                                el.html(el.html() + "<br>" + ' (GDP - ' + gdpData[code] + ')' + "<br>");
-                                                                                el.html(el.html() + ' (인구 - ' + popData[code] + "만" + ')');
-                                                                            }
-                                                                        });
-                                                                    });
-
-                                                                </script>
-                                                                <script type="text/javascript" src="./GDP by country visualization_files/ga.js"></script>
-                                                                <script src="./GDP by country visualization_files/jquery-1.8.2.min.js"></script>
-                                                                <script src="./GDP by country visualization_files/css3-mediaqueries.js"></script>
-                                                                <script src="./GDP by country visualization_files/modernizr.js"></script>
-                                                                <script src="./GDP by country visualization_files/jquery-jvectormap-2.0.3.min.js"></script>
-                                                                <script src="./GDP by country visualization_files/tabs.js"></script>
-                                                                <script src="./GDP by country visualization_files/jquery-jvectormap-world-mill.js"></script>
-                                                                <script src="./GDP by country visualization_files/gdp-data.js"></script>
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/style.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/lessframework.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/skin.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-jvectormap-2.0.3.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/syntax.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jsdoc.css">
-                                                                <link rel="stylesheet" media="all" href="./GDP by country visualization_files/jquery-ui-1.8.22.custom.css">
-                                                        </figure>
-                                                    </div>
+                                                    <div class="graph-content">
+                                                        <iframe src="board.html" width="1000" height="680"></iframe>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>역사사건</h2>
+                                                <p>연도별 역사사건들</p>
+                                                <div class="graph">
+                                                    <div class="graph-content">
+                                                        <iframe src="index.html" width="1300" height="680"></iframe>
+                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
